@@ -5,6 +5,8 @@ from bs4 import BeautifulSoup
 import xml.etree.ElementTree as ET
 import numpy as np
 from datetime import datetime
+pd.set_option('display.max_columns', None)
+
 
 
 def log_progress(message):
@@ -32,22 +34,23 @@ def extract(url, table_attribs):
         if len(values) == len(table_attribs):
             df.loc[len(df)] = values
 
+    log_progress('Data extraction complete. Initiating Transformation process')
     return df
 
-def transform(df,csv_path):
+
+def transform(df, csv_path):
     exchange_df = pd.read_csv(csv_path)
-    exchange_rate = exchange_df.set_index(exchange_df.columns[0]).squeeze().to_dict()
+    exchange_rate = exchange_df.set_index(exchange_df.columns[0]).to_dict()[exchange_df.columns[1]]
 
-    df['Market_Cap'] = df['Market_Cap'].replace('[\$,]', '', regex=True).astype(float)
+    df['MC_USD_Billion'] = df['MC_USD_Billion'].replace('[\$,]', '', regex=True).astype(float)
 
-    df['MC_EUR_Billion'] = np.round(df['Market_Cap'] * exchange_rate.get('EUR', 1), 2)
-    df['MC_GBP_Billion'] = np.round(df['Market_Cap'] * exchange_rate.get('GBP', 1), 2)
-    df['MC_INR_Billion'] = np.round(df['Market_Cap'] * exchange_rate.get('INR', 1), 2)
+    # 3. Add converted columns (rounded to 2 decimal places)
+    df['MC_GBP_Billion'] = [np.round(x * exchange_rate['GBP'], 2) for x in df['MC_USD_Billion']]
+    df['MC_EUR_Billion'] = [np.round(x * exchange_rate['EUR'], 2) for x in df['MC_USD_Billion']]
+    df['MC_INR_Billion'] = [np.round(x * exchange_rate['INR'], 2) for x in df['MC_USD_Billion']]
 
+    log_progress('Data transformation complete. Initiating Loading process')
     return df
-
-
-#def load_to_csv(df, output_path):
 
 
 #def load_to_db(df, sql_connection, table_name):
@@ -64,9 +67,10 @@ csv_path = 'exchange_rate.csv'
 log_progress('Preliminaries complete. Initiating ETL process')
 
 df = extract(url, table_attribs)
-
-log_progress('Data extraction complete. Initiating Transformation process')
+df = df.rename(columns={'Market_Cap': 'MC_USD_Billion'})
 
 df_transformed = transform(df,csv_path)
 
 print(df_transformed)
+
+print((df['MC_EUR_Billion'][4]))
