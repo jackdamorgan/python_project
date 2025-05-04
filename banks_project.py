@@ -38,7 +38,7 @@ def transform(df,csv_path):
     exchange_df = pd.read_csv(csv_path)
     exchange_rate = exchange_df.set_index(exchange_df.columns[0]).squeeze().to_dict()
 
-    df['Market_Cap'] = df['Market_Cap'].astype(float)
+    df['Market_Cap'] = df['Market_Cap'].replace('[\$,]', '', regex=True).astype(float)
 
     df['MC_EUR_Billion'] = np.round(df['Market_Cap'] * exchange_rate.get('EUR', 1), 2)
     df['MC_GBP_Billion'] = np.round(df['Market_Cap'] * exchange_rate.get('GBP', 1), 2)
