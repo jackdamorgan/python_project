@@ -69,6 +69,7 @@ url = 'https://web.archive.org/web/20230908091635/https://en.wikipedia.org/wiki/
 table_attribs = ['Rank','Bank name','Market_Cap']
 code_log = 'code_log.txt'
 csv_path = 'exchange_rate.csv'
+csv_transformed = ('largest_banks_data.csv')
 
 log_progress('Preliminaries complete. Initiating ETL process')
 
@@ -76,7 +77,7 @@ df = extract(url, table_attribs)
 df = df.rename(columns={'Market_Cap': 'MC_USD_Billion'})
 
 df_transformed = transform(df,csv_path)
-
+csv_trans = load_to_csv(df_transformed,csv_transformed)
 print(df_transformed)
 
 print((df['MC_EUR_Billion'][4]))
