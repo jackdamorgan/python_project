@@ -1,37 +1,4 @@
-20:31:42:Preliminaries complete. Initiating ETL process
-20:31:43:Data extraction complete. Initiating Transformation process
-20:31:43:Data transformation complete. Initiating Loading process
-20:34:59:Preliminaries complete. Initiating ETL process
-20:35:00:Data extraction complete. Initiating Transformation process
-20:35:00:Data transformation complete. Initiating Loading process
-20:35:16:Preliminaries complete. Initiating ETL process
-20:35:18:Data extraction complete. Initiating Transformation process
-20:35:18:Data transformation complete. Initiating Loading process
-20:35:39:Preliminaries complete. Initiating ETL process
-20:35:40:Data extraction complete. Initiating Transformation process
-20:35:40:Data transformation complete. Initiating Loading process
-20:36:12:Preliminaries complete. Initiating ETL process
-20:36:13:Data extraction complete. Initiating Transformation process
-20:36:13:Data transformation complete. Initiating Loading process
-20:36:25:Preliminaries complete. Initiating ETL process
-20:36:26:Data extraction complete. Initiating Transformation process
-20:36:26:Data transformation complete. Initiating Loading process
-20:38:28:Preliminaries complete. Initiating ETL process
-20:38:56:Preliminaries complete. Initiating ETL process
-20:39:11:Preliminaries complete. Initiating ETL process
-20:39:26:Preliminaries complete. Initiating ETL process
-20:39:27:Data extraction complete. Initiating Transformation process
-20:39:27:Data transformation complete. Initiating Loading process
-20:39:37:Preliminaries complete. Initiating ETL process
-20:39:38:Data extraction complete. Initiating Transformation process
-20:39:38:Data transformation complete. Initiating Loading process
-20:40:21:Preliminaries complete. Initiating ETL process
-20:41:11:Preliminaries complete. Initiating ETL process
-20:41:12:Data extraction complete. Initiating Transformation process
-20:41:12:Data transformation complete. Initiating Loading process
-20:47:07:Preliminaries complete. Initiating ETL process
-20:47:09:Data extraction complete. Initiating Transformation process
-20:47:09:Data transformation complete. Initiating Loading process
-20:47:14:Preliminaries complete. Initiating ETL process
-20:47:15:Data extraction complete. Initiating Transformation process
-20:47:15:Data transformation complete. Initiating Loading process
+20:52:53:Preliminaries complete. Initiating ETL process
+20:52:55:Data extraction complete. Initiating Transformation process
+20:52:55:Data transformation complete. Initiating Loading process
+20:52:55:Data saved to CSV file
