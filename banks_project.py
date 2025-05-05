@@ -54,6 +54,8 @@ def transform(df, csv_path):
 
 def load_to_csv(df, output_path):
     df.to_csv(output_path)
+    log_progress('Data saved to CSV file')
+
 
 def load_to_db(df, sql_connection, table_name):
     df.to_sql(table_name, sql_connection, if_exists='replace', index=False)
@@ -76,8 +78,11 @@ log_progress('Preliminaries complete. Initiating ETL process')
 df = extract(url, table_attribs)
 df = df.rename(columns={'Market_Cap': 'MC_USD_Billion'})
 
+# print(df_transformed)
+#
+# print((df['MC_EUR_Billion'][4]))
+
 df_transformed = transform(df,csv_path)
 csv_trans = load_to_csv(df_transformed,csv_transformed)
-print(df_transformed)
 
-print((df['MC_EUR_Billion'][4]))
+db_load =load_to_db()
