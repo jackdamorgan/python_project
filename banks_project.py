@@ -52,12 +52,18 @@ def transform(df, csv_path):
     log_progress('Data transformation complete. Initiating Loading process')
     return df
 
+def load_to_csv(df, output_path):
+    df.to_csv(output_path)
 
-#def load_to_db(df, sql_connection, table_name):
+def load_to_db(df, sql_connection, table_name):
+    df.to_sql(table_name, sql_connection, if_exists='replace', index=False)
 
+def run_query(query_statement, sql_connection):
+    print(query_statement)
+    query_output = pd.read_sql(query_statement, sql_connection)
+    print(query_output)
 
-#def run_query(query_statement, sql_connection):
-
+# Executing code by order
 
 url = 'https://web.archive.org/web/20230908091635/https://en.wikipedia.org/wiki/List_of_largest_banks'
 table_attribs = ['Rank','Bank name','Market_Cap']
