@@ -3,7 +3,6 @@ import sqlite3
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
-import xml.etree.ElementTree as ET
 import numpy as np
 from datetime import datetime
 pd.set_option('display.max_columns', None)
