@@ -2,3 +2,28 @@
 20:52:55:Data extraction complete. Initiating Transformation process
 20:52:55:Data transformation complete. Initiating Loading process
 20:52:55:Data saved to CSV file
+20:48:15:Preliminaries complete. Initiating ETL process
+20:48:18:Data extraction complete. Initiating Transformation process
+20:48:18:Data transformation complete. Initiating Loading process
+20:48:18:Data saved to CSV file
+20:48:57:Preliminaries complete. Initiating ETL process
+20:48:58:Data extraction complete. Initiating Transformation process
+20:48:58:Data transformation complete. Initiating Loading process
+20:48:58:Data saved to CSV file
+20:49:51:Preliminaries complete. Initiating ETL process
+20:49:53:Data extraction complete. Initiating Transformation process
+20:49:53:Data transformation complete. Initiating Loading process
+20:49:53:Data saved to CSV file
+20:50:27:Preliminaries complete. Initiating ETL process
+20:50:28:Data extraction complete. Initiating Transformation process
+20:50:28:Data transformation complete. Initiating Loading process
+20:50:28:Data saved to CSV file
+20:56:18:Preliminaries complete. Initiating ETL process
+20:56:21:Data extraction complete. Initiating Transformation process
+20:56:21:Data transformation complete. Initiating Loading process
+20:56:21:Data saved to CSV file
+20:56:43:Preliminaries complete. Initiating ETL process
+20:56:44:Data extraction complete. Initiating Transformation process
+20:56:44:Data transformation complete. Initiating Loading process
+20:56:44:Data saved to CSV file
+20:56:44:Data loaded to database: Banks.db, table: Largest_banks

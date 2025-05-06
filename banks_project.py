@@ -1,4 +1,5 @@
 import glob
+import sqlite3
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
@@ -56,9 +57,20 @@ def load_to_csv(df, output_path):
     df.to_csv(output_path)
     log_progress('Data saved to CSV file')
 
+def load_to_db(df, db_name, table_name):
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
 
-def load_to_db(df, sql_connection, table_name):
-    df.to_sql(table_name, sql_connection, if_exists='replace', index=False)
+    # Save to SQL table
+    df.to_sql(table_name, conn, if_exists='replace', index=False)
+
+    # Log it
+    log_progress(f"Data loaded to database: {db_name}, table: {table_name}")
+
+    # Close connection
+    conn.close()
+
+
 
 def run_query(query_statement, sql_connection):
     print(query_statement)
@@ -66,7 +78,7 @@ def run_query(query_statement, sql_connection):
     print(query_output)
 
 # Executing code by order
-
+#Intializing
 url = 'https://web.archive.org/web/20230908091635/https://en.wikipedia.org/wiki/List_of_largest_banks'
 table_attribs = ['Rank','Bank name','Market_Cap']
 code_log = 'code_log.txt'
@@ -75,6 +87,7 @@ csv_transformed = ('largest_banks_data.csv')
 
 log_progress('Preliminaries complete. Initiating ETL process')
 
+#Extracting Data
 df = extract(url, table_attribs)
 df = df.rename(columns={'Market_Cap': 'MC_USD_Billion'})
 
@@ -82,7 +95,11 @@ df = df.rename(columns={'Market_Cap': 'MC_USD_Billion'})
 #
 # print((df['MC_EUR_Billion'][4]))
 
+#Loading to CSV
 df_transformed = transform(df,csv_path)
 csv_trans = load_to_csv(df_transformed,csv_transformed)
 
-db_load =load_to_db()
+#Loading to database
+db_name = 'Banks.db'
+table_name = 'Largest_banks'
+load_to_db(df_transformed, db_name, table_name)
