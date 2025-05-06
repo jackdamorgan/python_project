@@ -57,6 +57,7 @@ def load_to_csv(df, output_path):
     log_progress('Data saved to CSV file')
 
 def load_to_db(df, db_name, table_name):
+    log_progress('SQL Connection initiated')
     conn = sqlite3.connect(db_name)
     cursor = conn.cursor()
 
@@ -67,14 +68,18 @@ def load_to_db(df, db_name, table_name):
     log_progress(f"Data loaded to database: {db_name}, table: {table_name}")
 
     # Close connection
+    log_progress('Data loaded to Database as a table, Executing queriesß')
     conn.close()
 
 
+def run_query(db_name, query):
+    conn = sqlite3.connect(db_name)
+    result = pd.read_sql_query(query, conn)
+    conn.close()
 
-def run_query(query_statement, sql_connection):
-    print(query_statement)
-    query_output = pd.read_sql(query_statement, sql_connection)
-    print(query_output)
+    log_progress(f"Query executed: {query}")
+    return result
+
 
 # Executing code by order
 #Intializing
@@ -102,3 +107,8 @@ csv_trans = load_to_csv(df_transformed,csv_transformed)
 db_name = 'Banks.db'
 table_name = 'Largest_banks'
 load_to_db(df_transformed, db_name, table_name)
+
+#Executing Query
+query = "SELECT * FROM Largest_banks LIMIT 5;"
+result_df = run_query(db_name, query)
+print(result_df)
