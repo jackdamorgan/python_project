@@ -109,6 +109,7 @@ table_name = 'Largest_banks'
 load_to_db(df_transformed, db_name, table_name)
 
 #Executing Query
-query = "SELECT * FROM Largest_banks LIMIT 5;"
+query = "SELECT * FROM Largest_banks"
 result_df = run_query(db_name, query)
 print(result_df)
+
