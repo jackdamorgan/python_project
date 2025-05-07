@@ -68,7 +68,7 @@ def load_to_db(df, db_name, table_name):
     log_progress(f"Data loaded to database: {db_name}, table: {table_name}")
 
     # Close connection
-    log_progress('Data loaded to Database as a table, Executing queriesß')
+    log_progress('Data loaded to Database as a table, Executing queries')
     conn.close()
 
 

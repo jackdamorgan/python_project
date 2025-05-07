@@ -6,3 +6,11 @@
 21:04:18:Data loaded to database: Banks.db, table: Largest_banks
 21:04:18:Data loaded to Database as a table, Executing queriesß
 21:04:18:Query executed: SELECT * FROM Largest_banks LIMIT 5;
+20:06:39:Preliminaries complete. Initiating ETL process
+20:06:43:Data extraction complete. Initiating Transformation process
+20:06:43:Data transformation complete. Initiating Loading process
+20:06:43:Data saved to CSV file
+20:06:43:SQL Connection initiated
+20:06:43:Data loaded to database: Banks.db, table: Largest_banks
+20:06:43:Data loaded to Database as a table, Executing queriesß
+20:06:43:Query executed: SELECT * FROM Largest_banks LIMIT 5;
