@@ -25,10 +25,12 @@ trends.
 ## Usage
 
 Run the main script:
+python banks_project.py
+                     
 
 ## Technologies Used
 
-- Python 3.x
+- Python 3.9.7
 - pandas
 - SQLite
 - matplotlib
