@@ -1,16 +1,8 @@
-21:04:17:Preliminaries complete. Initiating ETL process
-21:04:18:Data extraction complete. Initiating Transformation process
-21:04:18:Data transformation complete. Initiating Loading process
-21:04:18:Data saved to CSV file
-21:04:18:SQL Connection initiated
-21:04:18:Data loaded to database: Banks.db, table: Largest_banks
-21:04:18:Data loaded to Database as a table, Executing queriesß
-21:04:18:Query executed: SELECT * FROM Largest_banks LIMIT 5;
-20:06:39:Preliminaries complete. Initiating ETL process
-20:06:43:Data extraction complete. Initiating Transformation process
-20:06:43:Data transformation complete. Initiating Loading process
-20:06:43:Data saved to CSV file
-20:06:43:SQL Connection initiated
-20:06:43:Data loaded to database: Banks.db, table: Largest_banks
-20:06:43:Data loaded to Database as a table, Executing queriesß
-20:06:43:Query executed: SELECT * FROM Largest_banks LIMIT 5;
+20:27:50:Preliminaries complete. Initiating ETL process
+20:27:51:Data extraction complete. Initiating Transformation process
+20:27:51:Data transformation complete. Initiating Loading process
+20:27:51:Data saved to CSV file
+20:27:51:SQL Connection initiated
+20:27:51:Data loaded to database: Banks.db, table: Largest_banks
+20:27:51:Data loaded to Database as a table, Executing queries
+20:27:51:Query executed: SELECT * FROM Largest_banks
